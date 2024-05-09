@@ -97,7 +97,7 @@ def plot_risk_profile(risk_profile_category):
     st.pyplot(fig)
 
 def main():
-    st.title("Risk-Reward Profile Assessment")
+    st.subheader("Risk-Reward Profile Assessment")
     
     # Questionnaire
     time = st.selectbox("How long do you plan to invest your money?", ("Less than 3 years", "3 to 10 years", "More than 10 years"))
@@ -115,7 +115,7 @@ def main():
         risk_capacity_category = determine_risk_capacity_category(risk_capacity)
         risk_profile_category = determine_risk_profile_category(risk_profile)
 
-        txt = st.markdown("""The following risk profile has been prepared based on your risk capacity and risk tolerance""")
+        txt = st.markdown("""**The following risk profile has been prepared based on your risk capacity and risk tolerance:**""")
         st.write("Risk Appetite:", risk_appetite_category)
         st.write("Risk Capacity:", risk_capacity_category)
         st.write("Risk Profile:", risk_profile_category)
