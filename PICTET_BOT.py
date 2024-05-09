@@ -2,8 +2,8 @@
 # coding: utf-8
 
 import streamlit as st
+import plotly.graph_objects as go
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
 
 st.title('P.I.C.T.E.T Portfolio Optimizer')
@@ -87,14 +87,21 @@ def plot_risk_profile(risk_profile_category):
     categories = ["Conservative", "Moderately Conservative", "Moderate", "Moderately Aggressive", "Aggressive"]
     colors = ['red' if cat == risk_profile_category else 'blue' for cat in categories]
 
-    fig, ax = plt.subplots()
-    ax.barh(categories, [1]*len(categories), color=colors, height=0.5)
-    ax.set_xlim(0, 1)  # Adjust based on the scale you want
-    ax.set_xlabel('Risk Profile')
-    ax.set_title('User Risk Profile')
-    ax.grid(False)
+    fig = go.Figure(go.Bar(
+        y=categories,
+        x=[1]*len(categories),
+        marker=dict(color=colors),
+        orientation='h'
+    ))
 
-    st.pyplot(fig)
+    fig.update_layout(
+        title='User Risk Profile',
+        xaxis=dict(title='Risk Profile'),
+        yaxis=dict(title=None),
+        showlegend=False
+    )
+
+    st.plotly_chart(fig)
 
 def main():
     st.title("Risk-Reward Profile Assessment")
