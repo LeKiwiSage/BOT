@@ -20,7 +20,7 @@ txt = st.markdown(
     our bot will work tirelessly to optimize your portfolio for maximum returns while managing risk effectively.
     With our investment fund, you're not just investing your money – you're investing in your future.
     Together, let's unlock the full potential of your assets and build a brighter financial tomorrow. **Welcome aboard!**
-    """
+    """)
 
 def calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, loss, min_loss):
     # Convert select box responses to numerical values
