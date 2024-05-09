@@ -3,6 +3,7 @@
 
 
 import streamlit as st
+import matplotlib.pyplot as plt
 
 st.title('P.I.C.T.E.T Portfolio Optimizer')
 
