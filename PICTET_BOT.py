@@ -114,7 +114,8 @@ def main():
         risk_appetite_category = determine_risk_appetite_category(risk_appetite)
         risk_capacity_category = determine_risk_capacity_category(risk_capacity)
         risk_profile_category = determine_risk_profile_category(risk_profile)
-        
+
+        txt = st.markdown("""The following risk profile has been prepared based on your risk capacity and risk tolerance""")
         st.write("Risk Appetite:", risk_appetite_category)
         st.write("Risk Capacity:", risk_capacity_category)
         st.write("Risk Profile:", risk_profile_category)
