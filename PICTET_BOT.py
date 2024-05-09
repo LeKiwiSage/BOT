@@ -13,10 +13,10 @@ txt = st.markdown(
 
     We are thrilled to have you onboard as we embark on an exciting journey together.
     Our goal is simple yet ambitious: to empower you to grow your investment portfolio 
-    across multiple assets, tailored precisely to your :blue[unique risk-reward profile].
+    across multiple assets, tailored precisely to your :red[unique risk-reward profile].
     
     By understanding your ***risk tolerance***, ***investment goals***, and ***preferences***, we will 
-    craft a :blue-background[personalized investment strategy] that aligns with your vision for the future.
+    craft a :red-background[personalized investment strategy] that aligns with your vision for the future.
     
     Whether you are seeking steady growth, aggressive expansion, or somewhere in between, 
     our bot will work tirelessly to optimize your portfolio for maximum returns while managing risk effectively.
