@@ -153,6 +153,5 @@ def main():
     ep.eoy_returns(weights)
     ep.monthly_returns(weights)
 
-
 if __name__ == "__main__":
     main()
