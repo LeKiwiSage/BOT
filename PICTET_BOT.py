@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-
+echo "backend: TkAgg" >> ~/.matplotlib/matplotlibrc
 import streamlit as st
 import numpy as np
+import matplotlib.pyplot as plt
 import pandas as pd
 
 st.title('P.I.C.T.E.T Portfolio Optimizer')
