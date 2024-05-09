@@ -119,5 +119,7 @@ def main():
         st.write("Risk Capacity:", risk_capacity_category)
         st.write("Risk Profile:", risk_profile_category)
 
+        plot_risk_profile(risk_profile_category)
+        
 if __name__ == "__main__":
     main()
