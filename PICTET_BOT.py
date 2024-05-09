@@ -81,6 +81,19 @@ def determine_risk_profile_category(risk_profile):
     else:
         return "Aggressive"
 
+def plot_risk_profile(risk_profile_category):
+    categories = ["Conservative", "Moderately Conservative", "Moderate", "Moderately Aggressive", "Aggressive"]
+    colors = ['red' if cat == risk_profile_category else 'blue' for cat in categories]
+
+    fig, ax = plt.subplots()
+    ax.barh(categories, [1]*len(categories), color=colors, height=0.5)
+    ax.set_xlim(0, 1)  # Adjust based on the scale you want
+    ax.set_xlabel('Risk Profile')
+    ax.set_title('User Risk Profile')
+    ax.grid(False)
+
+    st.pyplot(fig)
+
 def main():
     st.title("Risk-Reward Profile Assessment")
     
@@ -103,16 +116,6 @@ def main():
         st.write("Risk Appetite:", risk_appetite_category)
         st.write("Risk Capacity:", risk_capacity_category)
         st.write("Risk Profile:", risk_profile_category)
-
-        # Display Risk Profile
-        risk_profile_levels = ["Conservative", "Moderately Conservative", "Moderate", "Moderately Aggressive", "Aggressive"]
-        risk_profile_index = risk_profile_levels.index(risk_profile_category)
-        
-        for i, level in enumerate(risk_profile_levels):
-            if i == risk_profile_index:
-                st.markdown(f"**{level}**")
-            else:
-                st.markdown(level)
 
 if __name__ == "__main__":
     main()
