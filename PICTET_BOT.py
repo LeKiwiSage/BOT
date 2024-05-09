@@ -27,6 +27,7 @@ txt = st.markdown(
     **Welcome aboard!**
     """)
 
+
 def calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, loss, min_loss):
     # Convert select box responses to numerical values
     time_map = {"Less than 3 years": 1, "3 to 10 years": 2, "More than 10 years": 3}
@@ -52,8 +53,36 @@ def calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, lo
 
     return risk_appetite, risk_capacity, risk_profile
 
+def determine_risk_appetite_category(risk_appetite):
+    if risk_appetite < 2.5:
+        return "Decreased"
+    elif risk_appetite < 3.5:
+        return "Medium"
+    else:
+        return "Increased"
+
+def determine_risk_capacity_category(risk_capacity):
+    if risk_capacity == 1:
+        return "Low"
+    elif risk_capacity == 2:
+        return "Medium"
+    else:
+        return "High"
+
+def determine_risk_profile_category(risk_profile):
+    if risk_profile < 2:
+        return "Conservative"
+    elif risk_profile < 3:
+        return "Moderately Conservative"
+    elif risk_profile < 4:
+        return "Moderate"
+    elif risk_profile < 5:
+        return "Moderately Aggressive"
+    else:
+        return "Aggressive"
+
 def main():
-    st.subheader("Risk-Reward Profile Assessment")
+    st.title("Risk-Reward Profile Assessment")
     
     # Questionnaire
     time = st.selectbox("How long do you plan to invest your money?", ("Less than 3 years", "3 to 10 years", "More than 10 years"))
@@ -67,9 +96,13 @@ def main():
     if st.button("Calculate Risk-Reward Profile"):
         risk_appetite, risk_capacity, risk_profile = calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, loss, min_loss)
         
-        st.write("Risk Appetite:", risk_appetite)
-        st.write("Risk Capacity:", risk_capacity)
-        st.write("Risk Profile:", risk_profile)
+        risk_appetite_category = determine_risk_appetite_category(risk_appetite)
+        risk_capacity_category = determine_risk_capacity_category(risk_capacity)
+        risk_profile_category = determine_risk_profile_category(risk_profile)
+        
+        st.write("Risk Appetite:", risk_appetite_category)
+        st.write("Risk Capacity:", risk_capacity_category)
+        st.write("Risk Profile:", risk_profile_category)
 
 if __name__ == "__main__":
     main()
