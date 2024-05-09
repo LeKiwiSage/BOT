@@ -13,16 +13,18 @@ txt = st.markdown(
 
     We are thrilled to have you onboard as we embark on an exciting journey together.
     Our goal is simple yet ambitious: to empower you to grow your investment portfolio 
-    across multiple assets, tailored precisely to your unique risk-reward profile.
+    across multiple assets, tailored precisely to your :blue[unique risk-reward profile].
     
-    By understanding your risk tolerance, investment goals, and preferences, we will 
-    craft a personalized investment strategy that aligns with your vision for the future.
+    By understanding your ***risk tolerance***, ***investment goals***, and ***preferences***, we will 
+    craft a :blue-background[personalized investment strategy] that aligns with your vision for the future.
     
     Whether you are seeking steady growth, aggressive expansion, or somewhere in between, 
     our bot will work tirelessly to optimize your portfolio for maximum returns while managing risk effectively.
     
-    With our investment fund, you're not just investing your money – you're investing in your future.
-    Together, let's unlock the full potential of your assets and build a brighter financial tomorrow. **Welcome aboard!**
+    With our investment fund, you're not just investing your money – **you're investing in your future**.
+    Together, let's unlock the full potential of your assets and build a brighter financial tomorrow. 
+    
+    **Welcome aboard!**
     """)
 
 def calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, loss, min_loss):
