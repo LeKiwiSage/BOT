@@ -7,7 +7,6 @@
 import numpy as np
 import pandas as pd
 import math
-from empyrial import empyrial, Engine
 import matplotlib.pyplot as plt
 import yfinance as yf
 import streamlit as st
