@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
@@ -8,29 +5,6 @@ import pandas as pd
 import datetime as datetime
 import yfinance as yf
 import empyrial as ep
-
-st.title('Primarily Invented for Creative Tax Evasion Tactics (P.I.C.T.E.T) Portfolio Optimizer')
-
-#Welcome Statement
-txt = st.markdown(
-    """
-    :red-background[**Welcome to your investment platform!**]
-
-    We are thrilled to have you onboard as we embark on an exciting journey together.
-    Our goal is simple yet ambitious: to empower you to grow your investment portfolio 
-    across multiple assets, tailored precisely to your :red[unique risk-reward profile].
-    
-    By understanding your ***risk tolerance***, ***investment goals***, and ***preferences***, we will 
-    craft a :red-background[personalized investment strategy] that aligns with your vision for the future.
-    
-    Whether you are seeking steady growth, aggressive expansion, or somewhere in between, 
-    our bot will work tirelessly to optimize your portfolio for maximum returns while managing risk effectively.
-    
-    With our investment fund, you're not just investing your money – **you're investing in your future**.
-    Together, let's unlock the full potential of your assets and build a brighter financial tomorrow. 
-    
-    **Welcome aboard!**
-    """)
 
 
 def calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, loss, min_loss):
@@ -101,7 +75,7 @@ def get_stock_symbols(risk_profile_category):
 
 def optimize_portfolio(stock_symbols):
     # Download historical data for the selected stocks
-    data = yf.download(stock_symbols, start="2010-01-01", end=datetime.today().strftime('%Y-%m-%d'))['Adj Close']
+    data = yf.download(stock_symbols, start="2020-01-01", end="2022-01-01")['Adj Close']
 
     # Optimize portfolio using Empyrial
     weights = ep.optimizer(data, "max_sharpe")
@@ -109,7 +83,7 @@ def optimize_portfolio(stock_symbols):
     return weights
 
 def main():
-    st.subheader("Risk-Reward Profile Assessment")
+    st.title("Portfolio Optimization based on Risk Profile")
     
     # Questionnaire
     time = st.selectbox("How long do you plan to invest your money?", ("Less than 3 years", "3 to 10 years", "More than 10 years"))
@@ -120,26 +94,11 @@ def main():
     loss = st.select_slider("The risk of suffering losses on my assets concerns me.", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"])
     min_loss = st.select_slider("Minimal losses also concern me.", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"])
     
-    if st.button("Calculate Risk-Reward Profile"):
-        risk_appetite, risk_capacity, risk_profile = calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, loss, min_loss)
-        
-        risk_appetite_category = determine_risk_appetite_category(risk_appetite)
-        risk_capacity_category = determine_risk_capacity_category(risk_capacity)
-        risk_profile_category = determine_risk_profile_category(risk_profile)
-
-        txt = st.markdown("""**The following risk profile has been prepared based on your risk capacity and risk tolerance:**""")
-        st.write("Risk Appetite:", risk_appetite_category)
-        st.write("Risk Capacity:", risk_capacity_category)
-        st.write("Risk Profile:", risk_profile_category)
-
-        # Display visual representation of risk profile
-        categories = ["Conservative", "Moderately Conservative", "Moderate", "Moderately Aggressive", "Aggressive"]
-        for cat in categories:
-            if cat == risk_profile_category:
-                st.markdown(f"<div style='background-color: yellow; width: 20px; height: 10px; display: inline-block;'></div> {cat}", unsafe_allow_html=True)
-            else:
-                st.markdown(f"<div style='width: 20px; height: 10px; display: inline-block;'></div> {cat}", unsafe_allow_html=True)     
-
+    # Calculate risk profile category
+    risk_profile = calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, loss, min_loss)
+    risk_profile_category = determine_risk_profile_category(risk_profile)
+    
+    # Get stock symbols based on risk profile category
     stock_symbols = get_stock_symbols(risk_profile_category)
     
     # Optimize portfolio
@@ -152,7 +111,6 @@ def main():
     ep.cumulative_returns(weights)
     ep.eoy_returns(weights)
     ep.monthly_returns(weights)
-
 
 if __name__ == "__main__":
     main()
