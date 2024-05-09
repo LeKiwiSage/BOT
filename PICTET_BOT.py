@@ -104,5 +104,15 @@ def main():
         st.write("Risk Capacity:", risk_capacity_category)
         st.write("Risk Profile:", risk_profile_category)
 
+        # Display Risk Profile
+        risk_profile_levels = ["Conservative", "Moderately Conservative", "Moderate", "Moderately Aggressive", "Aggressive"]
+        risk_profile_index = risk_profile_levels.index(risk_profile_category)
+        
+        for i, level in enumerate(risk_profile_levels):
+            if i == risk_profile_index:
+                st.markdown(f"**{level}**")
+            else:
+                st.markdown(level)
+
 if __name__ == "__main__":
     main()
