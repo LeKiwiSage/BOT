@@ -101,7 +101,7 @@ def get_stock_symbols(risk_profile_category):
 
 def optimize_portfolio(stock_symbols):
     # Download historical data for the selected stocks
-    data = yf.download(stock_symbols, start="2010-01-01", end=datetime.today().strftime('%Y-%m-%d'))['Adj Close']
+    data = yf.download(stock_symbols, start="2010-01-01", end="%Y-%m-%d"))['Adj Close']
 
     # Optimize portfolio using Empyrial
     weights = ep.optimizer(data, "max_sharpe")
