@@ -6,8 +6,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import datetime as datetime
-import yfinance as yf
-import empyrial as ep
 
 st.title('Primarily Invented for Creative Tax Evasion Tactics (P.I.C.T.E.T) Portfolio Optimizer')
 
@@ -86,28 +84,6 @@ def determine_risk_profile_category(risk_profile):
     else:
         return "Aggressive"
 
-def get_stock_symbols(risk_profile_category):
-    # Define stock symbols based on risk profile category
-    if risk_profile_category == "Conservative":
-        return ["AAPL", "MSFT", "KO"]
-    elif risk_profile_category == "Moderately Conservative":
-        return ["AAPL", "MSFT", "KO", "FB", "GOOGL"]
-    elif risk_profile_category == "Moderate":
-        return ["AAPL", "MSFT", "KO", "FB", "GOOGL", "NFLX", "TSLA"]
-    elif risk_profile_category == "Moderately Aggressive":
-        return ["AAPL", "MSFT", "KO", "FB", "GOOGL", "NFLX", "TSLA", "AMZN"]
-    else:  # Aggressive
-        return ["AAPL", "MSFT", "KO", "FB", "GOOGL", "NFLX", "TSLA", "AMZN", "BABA"]
-
-def optimize_portfolio(stock_symbols):
-    # Download historical data for the selected stocks
-    data = yf.download(stock_symbols, start="2010-01-01", end="%Y-%m-%d")['Adj Close']
-
-    # Optimize portfolio using Empyrial
-    weights = ep.optimizer(data, "max_sharpe")
-
-    return weights
-
 def main():
     st.subheader("Risk-Reward Profile Assessment")
     
@@ -131,27 +107,6 @@ def main():
         st.write("Risk Appetite:", risk_appetite_category)
         st.write("Risk Capacity:", risk_capacity_category)
         st.write("Risk Profile:", risk_profile_category)
-
-        # Display visual representation of risk profile
-        categories = ["Conservative", "Moderately Conservative", "Moderate", "Moderately Aggressive", "Aggressive"]
-        for cat in categories:
-            if cat == risk_profile_category:
-                st.markdown(f"<div style='background-color: yellow; width: 20px; height: 10px; display: inline-block;'></div> {cat}", unsafe_allow_html=True)
-            else:
-                st.markdown(f"<div style='width: 20px; height: 10px; display: inline-block;'></div> {cat}", unsafe_allow_html=True)     
-
-    stock_symbols = get_stock_symbols(risk_profile_category)
-    
-    # Optimize portfolio
-    weights = optimize_portfolio(stock_symbols)
-    
-    # Display portfolio optimization results using Empyrial
-    ep.summary(weights)
-
-    # Display interesting graphics using Empyrial
-    ep.cumulative_returns(weights)
-    ep.eoy_returns(weights)
-    ep.monthly_returns(weights)
 
 if __name__ == "__main__":
     main()
