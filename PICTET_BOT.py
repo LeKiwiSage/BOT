@@ -27,7 +27,7 @@ txt = st.markdown(
     With our investment fund, you're not just investing your money – **you're investing in your future**.
     Together, let's unlock the full potential of your assets and build a brighter financial tomorrow. 
     
-    **Welcome aboard!**
+    :red-background[**Welcome aboard!**]
     """)
 
 
