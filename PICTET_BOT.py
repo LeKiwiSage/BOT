@@ -219,8 +219,7 @@ def second_main():
 
     # Input box for company name
     company_name = st.text_input("**Enter the name of the company:**")
-    st.markdown('\n')
-    
+
     if st.button("Search"):
         if company_name:
             results = search_stock_name(company_name)
@@ -233,9 +232,11 @@ def second_main():
         else:
             st.write("Please enter the name of the company.")
 
+    st.markdown('\n')
+    
     # Check if stock_symbol is available
     stock_symbol = st.text_input('**Geben Sie das Aktiensymbol ein (z.B. AAPL für Apple):**')
-    st.markdown('\n')
+    
     
     if stock_symbol:   
         # Abrufen des aktuellen Kurses
