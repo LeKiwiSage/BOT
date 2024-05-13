@@ -35,7 +35,7 @@ txt = st.markdown(
     """)
 
 # Image load & display
-image = open("https://images.app.goo.gl/yBj4V8yApNis5ZKg7", "rb").read()
+image = open("https://images.app.goo.gl/yBj4V8yApNis5ZKg7").read()
 st.image(image, caption='Image Free of Use', use_column_width=True)
 
 st.write('---')
