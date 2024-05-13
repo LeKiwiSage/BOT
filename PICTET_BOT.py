@@ -232,7 +232,6 @@ def second_main():
             st.write("Please enter the name of the company.")
 
 def third_main():    
-    stock_symbol:
         # Abrufen des aktuellen Kurses
         url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock_symbol}&apikey=DEINSCHLÜSSEL'
         response = requests.get(url)
