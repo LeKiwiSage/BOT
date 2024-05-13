@@ -33,6 +33,11 @@ txt = st.markdown(
     
     :red-background[**Welcome aboard!**]
     """)
+
+# Image load & display
+image = open("https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonscout.com%2Fillustration%2Fpeople-trading-in-stock-market-4621498&psig=AOvVaw2PKVwjlEbXUFFSEfVklwjl&ust=1715717063489000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMD9_qO2i4YDFQAAAAAdAAAAABA5", "rb").read()
+st.image(image, caption='Image Free of Use', use_column_width=True)
+
 st.write('---')
 
 def calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, loss, min_loss):
