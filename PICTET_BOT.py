@@ -7,7 +7,8 @@ import numpy as np
 import pandas as pd
 import datetime as datetime
 
-st.title('Primarily Invented for Creative Tax Evasion Tactics (P.I.C.T.E.T) Portfolio Optimizer')
+st.title('STOCK TRADING BOT')
+st.subheader('Primarily Invented for Creative Tax Evasion Tactics (P.I.C.T.E.T) Portfolio Optimizer')
 
 #Welcome Statement
 txt = st.markdown(
