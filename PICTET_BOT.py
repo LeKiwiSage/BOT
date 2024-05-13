@@ -157,7 +157,9 @@ def main():
     loss = st.select_slider("**The risk of suffering losses on my assets concerns me.**", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"])
     st.markdown('\n')
     min_loss = st.select_slider("**Minimal losses also concern me.**", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"])
-    
+
+    st.markdown('\n')
+
     if st.button("Calculate Risk-Reward Profile"):
         risk_appetite, risk_capacity, risk_profile = calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, loss, min_loss)
         
@@ -165,7 +167,7 @@ def main():
         risk_capacity_category = determine_risk_capacity_category(risk_capacity)
         risk_profile_category = determine_risk_profile_category(risk_profile)
 
-        txt = st.markdown('### **The following risk profile has been prepared based on your risk capacity and risk tolerance:**')
+        txt = st.markdown('#### **The following risk profile has been prepared based on your risk capacity and risk tolerance:**')
         st.markdown('\n')
         st.write("**Risk Appetite:**", risk_appetite_category)
         st.markdown('\n')
