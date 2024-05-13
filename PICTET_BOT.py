@@ -33,7 +33,7 @@ txt = st.markdown(
     
     :red-background[**Welcome aboard!**]
     """)
-
+st.write('---')
 
 def calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, loss, min_loss):
     # Convert select box responses to numerical values
