@@ -32,7 +32,7 @@ st.subheader('Dear client P.I.C.T.E.T')
 st.markdown('\n\n')
 txt = st.markdown("""
         <p class="highlight-light-red bold text-justify">
-            Willkommen auf Ihrer Investitionsplattform!
+            Willkommen auf Ihrer Investitionsplattform!</span>
         </p>
 
         <p class="text-justify">
@@ -52,7 +52,7 @@ txt = st.markdown("""
         </p>
 
         <p class="highlight-light-red bold text-justify">
-            Willkommen an Bord!
+            Willkommen an Bord!</span>
         </p>
 """, unsafe_allow_html=True)
 
