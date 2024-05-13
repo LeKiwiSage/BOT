@@ -35,6 +35,9 @@ txt = st.markdown(
     """)
 st.write('---')
 
+txt = st.markdown("""Um Ihre Investitionen zu optimieren, ist es von größter Bedeutung, Ihre Risikotoleranz und Ihre finanziellen Ziele zu verstehen. Indem wir Ihnen maßgeschneiderte Fragen zu Ihren Risikofähigkeiten und Anlagezielen stellen, gewährleisten wir personalisierte Strategien, die genau auf Ihre Bedürfnisse und Wünsche abgestimmt sind. Lassen Sie uns diese Reise gemeinsam antreten.""")
+st.markdown('\n\n')
+
 def calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, loss, min_loss):
     # Convert select box responses to numerical values
     time_map = {"Less than 3 years": 1, "3 to 10 years": 2, "More than 10 years": 3}
