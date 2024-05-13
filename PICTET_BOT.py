@@ -165,9 +165,14 @@ def main():
         risk_capacity_category = determine_risk_capacity_category(risk_capacity)
         risk_profile_category = determine_risk_profile_category(risk_profile)
 
-        txt = st.markdown("""<p class="questionnaire-header bold">The following risk profile has been prepared based on your risk capacity and risk tolerance:</p>""")
+        txt = st.markdown("""
+        <p 
+        class="questionnaire-header bold">The following risk profile has been prepared based on your risk capacity and risk tolerance:</p>""")
+        st.markdown('\n')
         st.write("Risk Appetite:", risk_appetite_category)
+        st.markdown('\n')
         st.write("Risk Capacity:", risk_capacity_category)
+        st.empty()
         st.write("Risk Profile:", risk_profile_category)
 
 if __name__ == "__main__":
