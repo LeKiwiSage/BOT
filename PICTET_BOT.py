@@ -215,11 +215,12 @@ def search_stock_name(company_name):
         return None
 
 def second_main():
-    st.title("Stock Ticker Search")
+    st.subheader("Stock Ticker Search")
 
     # Input box for company name
-    company_name = st.text_input("Enter the name of the company:")
-
+    company_name = st.text_input("**Enter the name of the company:**")
+    st.markdown('\n')
+    
     if st.button("Search"):
         if company_name:
             results = search_stock_name(company_name)
@@ -233,8 +234,9 @@ def second_main():
             st.write("Please enter the name of the company.")
 
     # Check if stock_symbol is available
-    stock_symbol = st.text_input('Geben Sie das Aktiensymbol ein (z.B. AAPL für Apple):')
-
+    stock_symbol = st.text_input('**Geben Sie das Aktiensymbol ein (z.B. AAPL für Apple):**')
+    st.markdown('\n')
+    
     if stock_symbol:   
         # Abrufen des aktuellen Kurses
         url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock_symbol}&apikey=DEINSCHLÜSSEL'
