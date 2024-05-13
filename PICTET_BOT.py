@@ -200,8 +200,6 @@ if __name__ == "__main__":
         Lassen Sie uns nun damit beginnen, eine bestimmte Aktie auszuwählen, über die Sie sich erkundigen möchten:
         </p>
     """, unsafe_allow_html=True)
-    stock_symbol = st.text_input('Geben Sie das Aktiensymbol ein (z.B. AAPL für Apple):')
-
 
 # # Aktienauswahl und -analyse mit Alpha Vantage API
 def search_stock_name(company_name):
@@ -235,6 +233,8 @@ def second_main():
             st.write("Please enter the name of the company.")
 
     # Check if stock_symbol is available
+    stock_symbol = st.text_input('Geben Sie das Aktiensymbol ein (z.B. AAPL für Apple):')
+
     if stock_symbol:   
         # Abrufen des aktuellen Kurses
         url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock_symbol}&apikey=DEINSCHLÜSSEL'
