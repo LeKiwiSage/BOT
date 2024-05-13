@@ -133,7 +133,7 @@ def main():
     st.markdown('\n')
     st.markdown("""
         <p class="text-justify">
-        Mit den nächsten 7 Fragen können Sie Ihr aktuelles Risikoprofil <span class="highlight-light-red"in eines der 5 verschiedenen verfügbaren Profile einordnen.</span> Vergewissern Sie sich, dass Sie die richtigen Antworten geben, um anschließend die genauesten Kauf-/Verkaufsvorschläge zu erhalten.
+        Mit den nächsten 7 Fragen können Sie Ihr aktuelles Risikoprofil <span class="highlight-light-red">in eines der 5 verschiedenen verfügbaren Profile einordnen.</span> Vergewissern Sie sich, dass Sie die richtigen Antworten geben, um anschließend die genauesten Kauf-/Verkaufsvorschläge zu erhalten.
         </p>
     """, unsafe_allow_html=True)
     st.markdown('\n')
