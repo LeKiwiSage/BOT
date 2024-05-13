@@ -125,12 +125,19 @@ def main():
     
     # Text with justified alignment
     st.markdown("""
-    <p class="text-justify">
-    Um Ihre Investitionen zu optimieren, ist es von größter Bedeutung, Ihre Risikotoleranz und Ihre finanziellen Ziele <b>zu verstehen</b>. Indem wir Ihnen <mark class="highlight-light-red">maßgeschneiderte Fragen</mark> zu Ihren <i>Risikofähigkeiten</i> und <i>Anlagezielen</i> stellen, gewährleisten wir <span style="color:red"><b>personalisierte Strategien</b></span>, die genau auf Ihre Bedürfnisse und Wünsche abgestimmt sind. Lassen Sie uns diese Reise gemeinsam antreten.
-    </p>
-    """, unsafe_allow_html=True)
-
+        <p class="text-justify">
+        Um Ihre Investitionen zu optimieren, ist es von größter Bedeutung, Ihre Risikotoleranz und Ihre finanziellen Ziele <b>zu verstehen</b>. Indem wir Ihnen <mark class="highlight-light-red">maßgeschneiderte Fragen</mark> zu Ihren <i>Risikofähigkeiten</i> und <i>Anlagezielen</i> stellen, gewährleisten wir <span style="color:red"><b>personalisierte Strategien</b></span>, die genau auf Ihre Bedürfnisse und Wünsche abgestimmt sind. Lassen Sie uns diese Reise gemeinsam antreten.
+        </p>
+        """, unsafe_allow_html=True)
+    
     st.markdown('\n')
+    st.markdown("""
+        <p class="text-justify">
+        Mit den nächsten 7 Fragen können Sie Ihr aktuelles Risikoprofil <span class="highlight-light-red"in eines der 5 verschiedenen verfügbaren Profile einordnen.</span> Vergewissern Sie sich, dass Sie die richtigen Antworten geben, um anschließend die genauesten Kauf-/Verkaufsvorschläge zu erhalten.
+        </p>
+    """, unsafe_allow_html=True)
+    st.markdown('\n')
+  
     
     # Questionnaire
     time = st.selectbox("How long do you plan to invest your money?", ("Less than 3 years", "3 to 10 years", "More than 10 years"))
