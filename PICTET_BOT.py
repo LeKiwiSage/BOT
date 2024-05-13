@@ -197,7 +197,7 @@ def second_main():
         <p class="text-justify">
         Lassen Sie uns nun damit beginnen, eine bestimmte Aktie auszuwählen, über die Sie sich erkundigen möchten:
         </p>
-    
+    """, unsafe_allow_html=True)
     stock_symbol = st.text_input('Geben Sie das Aktiensymbol ein (z.B. AAPL für Apple):')
 
     if stock_symbol:
