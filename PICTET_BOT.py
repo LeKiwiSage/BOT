@@ -187,8 +187,7 @@ def main():
     st.markdown('\n')
     st.write('---')
 
-# Aktienauswahl und -analyse
-def second_main():
+    
     st.subheader("**P.I.C.T.E.T. Personalisierte Kauf-/Verkaufsvorschläge**")
     txt = st.markdown("""
         <p class="text-justify">
@@ -200,6 +199,39 @@ def second_main():
     """, unsafe_allow_html=True)
     stock_symbol = st.text_input('Geben Sie das Aktiensymbol ein (z.B. AAPL für Apple):')
 
+
+# # Aktienauswahl und -analyse mit Alpha Vantage API
+def search_stock_name(company_name):
+    try:
+        url = f"https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords={company_name}&apikey=DEINSCHLüSSEL"
+        response = requests.get(url)
+        data = response.json()
+        if "bestMatches" in data:
+            return data["bestMatches"]
+        else:
+            return None
+    except Exception as e:
+        return None
+
+def second_main():
+    st.title("Stock Ticker Search")
+
+    # Input box for company name
+    company_name = st.text_input("Enter the name of the company:")
+
+    if st.button("Search"):
+        if company_name:
+            results = search_stock_ticker(company_name)
+            if results:
+                st.write("Search Results:")
+                for result in results:
+                    st.write(f"- {result['2. name']} ({result['1. symbol']})")
+            else:
+                st.write("No results found. Please try again.")
+        else:
+            st.write("Please enter the name of the company.")
+
+def third_main():    
     if stock_symbol:
         # Abrufen des aktuellen Kurses
         url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock_symbol}&apikey=DEINSCHLÜSSEL'
@@ -235,3 +267,6 @@ if __name__ == "__main__":
 
 if __name__ == "__main__":
     second_main()
+
+if __name__ == "__main__":
+    third_main()
