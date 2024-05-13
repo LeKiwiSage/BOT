@@ -147,7 +147,7 @@ def main():
   
     # Questionnaire
     st.markdown('<p class="questionnaire-header">Questionnaire</p>', unsafe_allow_html=True)
-    time = st.selectbox("<p <span class='question-text bold'>How long do you plan to invest your money?</span></p>", ("Less than 3 years", "3 to 10 years", "More than 10 years"), unsafe_allow_html=True)
+    time = st.selectbox('<p <span class="question-text bold">How long do you plan to invest your money?</span></p>', ("Less than 3 years", "3 to 10 years", "More than 10 years"), unsafe_allow_html=True)
     st.markdown('\n')
     income = st.selectbox("<p <span class='question-text bold'>How much money do you plan to invest into the fund?</span></p>", ("Less than 100000 CHF", "Between 100000 and 250000 CHF", "More than 250000 CHF"), unsafe_allow_html=True)
     st.markdown('\n')
