@@ -176,11 +176,11 @@ def main():
         #### **Your following risk profile has been established based on your risk capacity and risk tolerance:**
         """)
         st.markdown('\n')
-        st.write("**Risk Appetite:**", f"<span class='{risk_appetite_category.lower().replace(' ', '-')}'><b>{risk_appetite_category}</b></span>", unsafe_allow_html=True)
+        st.write("Risk Appetite:", f"<span class='{risk_appetite_category.lower().replace(' ', '-')}'><b>{risk_appetite_category}</b></span>", unsafe_allow_html=True)
         st.markdown('\n')
-        st.write("**Risk Capacity:**", f"<span class='{risk_capacity_category.lower().replace(' ', '-')}'><b>{risk_capacity_category}</b></span>", unsafe_allow_html=True)
+        st.write("Risk Capacity:", f"<span class='{risk_capacity_category.lower().replace(' ', '-')}'><b>{risk_capacity_category}</b></span>", unsafe_allow_html=True)
         st.markdown('\n')
-        st.write("**Risk Profile:**", f"<span class='{risk_profile_category.lower().replace(' ', '-')}'><b>{risk_profile_category}</b></span>", unsafe_allow_html=True)
+        st.write("Risk Profile:", f"<span class='{risk_profile_category.lower().replace(' ', '-')}'><b>{risk_profile_category}</b></span>", unsafe_allow_html=True)
     
     st.markdown('\n')
     st.write('---')
