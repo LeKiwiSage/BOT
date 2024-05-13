@@ -37,7 +37,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 ##Welcome Statement
-st.subheader('Dear client P.I.C.T.E.T')
+st.subheader('Lieber P.I.C.T.E.T.-Kunde')
 st.markdown('\n\n')
 txt = st.markdown("""
         <p span class="highlight-light-red bold">
