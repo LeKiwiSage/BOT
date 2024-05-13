@@ -131,7 +131,7 @@ def determine_risk_profile_category(risk_profile):
     else:
         return "Aggressive"
 
-def Profile_Assessment():
+def main():
     st.subheader("Risk-Reward Profile Assessment")
     
     # Text with justified alignment
@@ -188,7 +188,7 @@ def Profile_Assessment():
     st.write('---')
 
 # Aktienauswahl und -analyse
-def main():
+def second_main():
     stock_symbol = st.text_input('Geben Sie das Aktiensymbol ein (z.B. AAPL für Apple):')
 
     if stock_symbol:
@@ -223,3 +223,6 @@ def main():
     
 if __name__ == "__main__":
     main()
+
+if __name__ == "__main__":
+    second_main()
