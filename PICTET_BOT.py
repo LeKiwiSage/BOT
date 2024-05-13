@@ -12,6 +12,15 @@ st.subheader('Primarily Invented for Creative Tax Evasion Tactics (P.I.C.T.E.T) 
 st.write('---')
 
 #Welcome Statement
+# Custom CSS style for text justification
+    st.markdown("""
+    <style>
+        .text-justify {
+            text-align: justify;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
 st.subheader('Dear client P.I.C.T.E.T')
 st.markdown('\n\n')
 txt = st.markdown(
@@ -96,15 +105,6 @@ def determine_risk_profile_category(risk_profile):
 def main():
     st.subheader("Risk-Reward Profile Assessment")
     
-    # Custom CSS style for text justification
-    st.markdown("""
-    <style>
-        .text-justify {
-            text-align: justify;
-        }
-    </style>
-    """, unsafe_allow_html=True)
-
     # Text with justified alignment
     st.markdown("""
     <p class="text-justify">
@@ -112,7 +112,6 @@ def main():
     </p>
     """, unsafe_allow_html=True)
 
-    txt = st.markdown("""Um Ihre Investitionen zu optimieren, ist es von größter Bedeutung, Ihre Risikotoleranz und Ihre finanziellen Ziele zu verstehen. Indem wir Ihnen maßgeschneiderte Fragen zu Ihren Risikofähigkeiten und Anlagezielen stellen, gewährleisten wir personalisierte Strategien, die genau auf Ihre Bedürfnisse und Wünsche abgestimmt sind. Lassen Sie uns diese Reise gemeinsam antreten.""")
     st.markdown('\n')
     
     # Questionnaire
