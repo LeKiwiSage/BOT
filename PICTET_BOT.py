@@ -45,7 +45,7 @@ txt = st.markdown("""
         </p>
 
         <p class="text-justify">
-            Indem wir Ihre <span class="italic">Risikotoleranz</span>, Ihre <span class="italic">Anlageziele</span> und Ihre <span class="italic">Präferenzen</span> kennenlernen, können wir eine <span class="highlight-light-red">persönliche Anlagestrategie</span> entwickeln, können wir eine personalisierte Anlagestrategie entwickeln, die Ihren Zukunftsvorstellungen entspricht, indem wir auf der Grundlage der technischen Analyse der von Ihnen vorgeschlagenen Aktienanlage <span class="bold">Kauf- oder Verkaufsempfehlungen</span> aussprechen.
+            Indem wir Ihre <span class="italic">Risikotoleranz</span>, Ihre <span class="italic">Anlageziele</span> und Ihre <span class="italic">Präferenzen</span> kennenlernen, können wir eine <span class="highlight-light-red">persönliche Anlagestrategie</span> entwickeln, die Ihren Zukunftsvorstellungen entspricht, indem wir auf der Grundlage der technischen Analyse der von Ihnen vorgeschlagenen Aktienanlage <span class="bold">Kauf- oder Verkaufsempfehlungen</span> aussprechen.
         </p>
 
         <p class="text-justify">
