@@ -12,6 +12,7 @@ st.subheader('Primarily Invented for Creative Tax Evasion Tactics (P.I.C.T.E.T) 
 st.write('---')
 
 #Welcome Statement
+st.subheader('Dear client P.I.C.T.E.T')
 txt = st.markdown(
     """
     :red-background[**Welcome to your investment platform!**]
