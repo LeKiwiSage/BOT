@@ -33,9 +33,6 @@ st.markdown("""
         font-size: 24px; 
         font-weight: bold;
     }
-    .question-text {
-        font-size: 18px;
-    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -147,19 +144,19 @@ def main():
   
     # Questionnaire
     st.markdown('<p class="questionnaire-header">Questionnaire</p>', unsafe_allow_html=True)
-    time = st.selectbox("<span class='question-text bold'>How long do you plan to invest your money?</span>", ("Less than 3 years", "3 to 10 years", "More than 10 years"), unsafe_allow_html=True)
+    time = st.selectbox("**How long do you plan to invest your money?**", ("Less than 3 years", "3 to 10 years", "More than 10 years"))
     st.markdown('\n')
-    income = st.selectbox("<p <span class='question-text bold'>How much money do you plan to invest into the fund?</span></p>", ("Less than 100000 CHF", "Between 100000 and 250000 CHF", "More than 250000 CHF"), unsafe_allow_html=True)
+    income = st.selectbox("**How much money do you plan to invest into the fund?**", ("Less than 100000 CHF", "Between 100000 and 250000 CHF", "More than 250000 CHF"))
     st.markdown('\n')
-    finpriority = st.select_slider("<p <span class='question-text bold'>I take financial matters seriously and security is my top priority.</span></p>", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"], unsafe_allow_html=True)
+    finpriority = st.select_slider("**I take financial matters seriously and security is my top priority.**", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"])
     st.markdown('\n')
-    risk = st.select_slider("<p <span class='question-text bold'>When it comes to my money, I am reluctant to take risks.</span></p>", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"], unsafe_allow_html=True)
+    risk = st.select_slider("**When it comes to my money, I am reluctant to take risks.**", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"])
     st.markdown('\n')
-    high_risk = st.select_slider("<p <span class='question-text bold'>I would like to achieve higher profits and therefore would be willing to take on higher risks.</span></p>", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"], unsafe_allow_html=True)
+    high_risk = st.select_slider("**I would like to achieve higher profits and therefore would be willing to take on higher risks.**", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"])
     st.markdown('\n')
-    loss = st.select_slider("<p <span class='question-text bold'>The risk of suffering losses on my assets concerns me.</span></p>", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"], unsafe_allow_html=True)
+    loss = st.select_slider("**The risk of suffering losses on my assets concerns me.**", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"])
     st.markdown('\n')
-    min_loss = st.select_slider("<p <span class='question-text bold'>Minimal losses also concern me.</span></p>", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"], unsafe_allow_html=True)
+    min_loss = st.select_slider("**Minimal losses also concern me.**", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"])
     
     if st.button("Calculate Risk-Reward Profile"):
         risk_appetite, risk_capacity, risk_profile = calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, loss, min_loss)
