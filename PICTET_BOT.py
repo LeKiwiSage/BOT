@@ -33,6 +33,11 @@ st.markdown("""
         font-size: 24px; 
         font-weight: bold;
     }
+    .conservative { color: green; }
+    .moderately-conservative { color: blue; }
+    .moderate { color: orange; }
+    .moderately-aggressive { color: purple; }
+    .aggressive { color: red; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -169,11 +174,11 @@ def main():
 
         txt = st.markdown('#### **Your following risk profile has been established based on your risk capacity and risk tolerance:**')
         st.markdown('\n')
-        st.write("**Risk Appetite:**", risk_appetite_category)
+        f"<span class='{risk_appetite_category.lower().replace(' ', '-')}'><b>{risk_appetite_category}</b></span>", unsafe_allow_html=True)
         st.markdown('\n')
-        st.write("**Risk Capacity:**", risk_capacity_category)
+        st.write("**Risk Capacity:**", f"<span class='{risk_capacity_category.lower().replace(' ', '-')}'><b>{risk_capacity_category}</b></span>", unsafe_allow_html=True)
         st.markdown('\n')
-        st.write("**Risk Profile:**", risk_profile_category)
+        st.write("**Risk Profile:**", f"<span class='{risk_profile_category.lower().replace(' ', '-')}'><b>{risk_profile_category}</b></span>", unsafe_allow_html=True)
     
     st.markdown('\n')
     st.write('---')
