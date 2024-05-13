@@ -41,7 +41,7 @@ txt = st.markdown("""
         </p>
 
         <p class="text-justify">
-            Wir freuen uns sehr, dass Sie bei uns sind und wir gemeinsam auf eine spannende Reise gehen. Unser Ziel ist einfach, aber ehrgeizig: Wir möchten Sie in die Lage versetzen, Ihr Anlageportfolio über mehrere Vermögenswerte zu erweitern, die genau auf Ihr <span class="red">einzigartiges Risiko-Ertrags-Profil</span> zugeschnitten sind.
+            Wir freuen uns sehr, dass Sie bei uns sind und wir gemeinsam auf eine spannende Reise gehen. Unser Ziel ist einfach, aber ehrgeizig: Wir möchten Sie in die Lage versetzen, Ihr Anlageportfolio über mehrere Vermögenswerte zu erweitern, die genau auf Ihr <span class="red-text">einzigartiges Risiko-Ertrags-Profil</span> zugeschnitten sind.
         </p>
 
         <p class="text-justify">
