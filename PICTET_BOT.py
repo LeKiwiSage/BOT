@@ -36,7 +36,7 @@ txt = st.markdown(
 
 # Image load & display
 image_url = "https://static.vecteezy.com/system/resources/previews/012/806/386/original/3d-businessman-buying-or-selling-shares-investing-in-stock-market-from-mobile-phone-candlestick-chart-of-stock-sale-and-buy-using-mobile-phones-market-investment-trading-3d-rendering-png.png"
-st.image(image_url, caption='Example Image', use_column_width=True)
+st.image(image_url, caption='Image Free of Use under Creative Commons license', use_column_width=True)
 
 st.write('---')
 
