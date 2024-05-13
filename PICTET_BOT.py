@@ -13,6 +13,7 @@ st.write('---')
 
 #Welcome Statement
 st.subheader('Dear client P.I.C.T.E.T')
+st.empty()
 txt = st.markdown(
     """
     :red-background[**Welcome to your investment platform!**]
