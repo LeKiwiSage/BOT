@@ -33,7 +33,7 @@ st.markdown("""
 st.subheader('Dear client P.I.C.T.E.T')
 st.markdown('\n\n')
 txt = st.markdown("""
-        <p class="highlight-light-red bold text-justify">Willkommen auf Ihrer Investitionsplattform!</span></p>
+        <p class="highlight-light-red bold">Willkommen auf Ihrer Investitionsplattform!</span></p>
 
         <p class="text-justify">
             Wir freuen uns sehr, dass Sie bei uns sind und wir gemeinsam auf eine spannende Reise gehen. Unser Ziel ist einfach, aber ehrgeizig: Wir möchten Sie in die Lage versetzen, Ihr Anlageportfolio über mehrere Vermögenswerte zu erweitern, die genau auf Ihr einzigartiges Risiko-Ertrags-Profil zugeschnitten sind.
@@ -51,7 +51,7 @@ txt = st.markdown("""
             Mit unserem Investmentfonds investieren Sie nicht nur Ihr Geld - <span class="bold">Sie investieren in Ihre Zukunft</span>. Lassen Sie uns gemeinsam das volle Potenzial Ihres Vermögens ausschöpfen und eine bessere finanzielle Zukunft aufbauen.
         </p>
 
-        <p class="highlight-light-red bold text-justify">
+        <p class="highlight-light-red bold">
             Willkommen an Bord!</span>
         </p>
 """, unsafe_allow_html=True)
