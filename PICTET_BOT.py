@@ -20,8 +20,10 @@ st.markdown("""
     }
     .highlight-light-red {
         background-color: #FFE9E9;
+    }
     .bold {
         font-weight: bold;
+    }
     .italic {
         font-weight: italic;
     }
