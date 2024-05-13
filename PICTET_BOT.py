@@ -29,6 +29,13 @@ st.markdown("""
     .red-text {
         color: #e32417;
     }
+    .questionnaire-header {
+        font-size: 24px; 
+        font-weight: bold;
+    }
+    .question-text {
+        font-size: 18px;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -139,6 +146,7 @@ def main():
     st.markdown('\n')
   
     # Questionnaire
+    st.markdown('<p class="questionnaire-header">Questionnaire</p>', unsafe_allow_html=True)
     time = st.selectbox("How long do you plan to invest your money?", ("Less than 3 years", "3 to 10 years", "More than 10 years"))
     st.markdown('\n')
     income = st.selectbox("How much money do you plan to invest into the fund?", ("Less than 100000 CHF", "Between 100000 and 250000 CHF", "More than 250000 CHF"))
