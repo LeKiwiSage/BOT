@@ -20,31 +20,41 @@ st.markdown("""
     }
     .highlight-light-red {
         background-color: #FFE9E9;
+    .bold {
+        font-weight: bold;
+    .italic {
+        font-weight: italic;
     }
 </style>
 """, unsafe_allow_html=True)
 
 st.subheader('Dear client P.I.C.T.E.T')
 st.markdown('\n\n')
-txt = st.markdown(
-    """
-    :red-background[**Welcome to your investment platform!**]
+txt = st.markdown("""
+        <p class="highlight-light-red bold text-justify">
+            Willkommen auf Ihrer Investitionsplattform!
+        </p>
 
-    We are thrilled to have you onboard as we embark on an exciting journey together.
-    Our goal is simple yet ambitious: to empower you to grow your investment portfolio 
-    across multiple assets, tailored precisely to your :red[unique risk-reward profile].
-    
-    By understanding your ***risk tolerance***, ***investment goals***, and ***preferences***, we will 
-    craft a :red-background[personalized investment strategy] that aligns with your vision for the future.
-    
-    Whether you are seeking steady growth, aggressive expansion, or somewhere in between, 
-    our bot will work tirelessly to optimize your portfolio for maximum returns while managing risk effectively.
-    
-    With our investment fund, you're not just investing your money – **you're investing in your future**.
-    Together, let's unlock the full potential of your assets and build a brighter financial tomorrow. 
-    
-    :red-background[**Welcome aboard!**]
-    """)
+        <p class="text-justify">
+            Wir freuen uns sehr, dass Sie bei uns sind und wir gemeinsam auf eine spannende Reise gehen. Unser Ziel ist einfach, aber ehrgeizig: Wir möchten Sie in die Lage versetzen, Ihr Anlageportfolio über mehrere Vermögenswerte zu erweitern, die genau auf Ihr einzigartiges Risiko-Ertrags-Profil zugeschnitten sind.
+        </p>
+
+        <p class="text-justify">
+            Indem wir Ihre <span class="italic">Risikotoleranz</span>, Ihre <span class="italic">Anlageziele</span> und Ihre <span class="italic">Präferenzen</span> kennenlernen, können wir eine <span class="highlight-light-red">persönliche Anlagestrategie</span> entwickeln, die Ihren Vorstellungen von der Zukunft entspricht.
+        </p>
+
+        <p class="text-justify">
+            Ganz gleich, ob Sie ein stetiges Wachstum, eine aggressive Expansion oder irgendetwas dazwischen anstreben, unser Bot wird unermüdlich daran arbeiten, Ihr Portfolio für maximale Renditen zu optimieren und gleichzeitig das Risiko effektiv zu steuern.
+        </p>
+
+        <p class="text-justify">
+            Mit unserem Investmentfonds investieren Sie nicht nur Ihr Geld - <span class="bold">Sie investieren in Ihre Zukunft</span>. Lassen Sie uns gemeinsam das volle Potenzial Ihres Vermögens ausschöpfen und eine bessere finanzielle Zukunft aufbauen.
+        </p>
+
+        <p class="highlight-light-red bold text-justify">
+            Willkommen an Bord!
+        </p>
+""", unsafe_allow_html=True)
 
 # Image load & display
 image_url = "https://static.vecteezy.com/system/resources/previews/012/806/386/original/3d-businessman-buying-or-selling-shares-investing-in-stock-market-from-mobile-phone-candlestick-chart-of-stock-sale-and-buy-using-mobile-phones-market-investment-trading-3d-rendering-png.png"
