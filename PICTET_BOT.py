@@ -24,8 +24,11 @@ st.markdown("""
     .bold {
         font-weight: bold;
     }
-    .italic {
-        font-weight: italic;
+      .italic {
+        font-style: italic;
+    }
+    .red-text {
+        color: red;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -38,7 +41,7 @@ txt = st.markdown("""
         </p>
 
         <p class="text-justify">
-            Wir freuen uns sehr, dass Sie bei uns sind und wir gemeinsam auf eine spannende Reise gehen. Unser Ziel ist einfach, aber ehrgeizig: Wir möchten Sie in die Lage versetzen, Ihr Anlageportfolio über mehrere Vermögenswerte zu erweitern, die genau auf Ihr einzigartiges Risiko-Ertrags-Profil zugeschnitten sind.
+            Wir freuen uns sehr, dass Sie bei uns sind und wir gemeinsam auf eine spannende Reise gehen. Unser Ziel ist einfach, aber ehrgeizig: Wir möchten Sie in die Lage versetzen, Ihr Anlageportfolio über mehrere Vermögenswerte zu erweitern, die genau auf Ihr <span class="red">einzigartiges Risiko-Ertrags-Profil</span> zugeschnitten sind.
         </p>
 
         <p class="text-justify">
