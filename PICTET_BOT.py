@@ -167,11 +167,11 @@ def main():
 
         txt = st.markdown("""<span class="questionnaire-header bold">The following risk profile has been prepared based on your risk capacity and risk tolerance:</span>""")
         st.markdown('\n')
-        st.write("Risk Appetite:", risk_appetite_category)
+        st.write("**Risk Appetite:**", <span class="highlight-light-red">risk_appetite_category</span>)
         st.markdown('\n')
-        st.write("Risk Capacity:", risk_capacity_category)
+        st.write("**Risk Capacity:**", risk_capacity_category)
         st.markdown('\n')
-        st.write("Risk Profile:", risk_profile_category)
+        st.write("**Risk Profile:**", risk_profile_category)
 
 if __name__ == "__main__":
     main()
