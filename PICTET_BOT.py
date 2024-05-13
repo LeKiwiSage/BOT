@@ -172,7 +172,7 @@ def main():
         risk_capacity_category = determine_risk_capacity_category(risk_capacity)
         risk_profile_category = determine_risk_profile_category(risk_profile)
 
-        txt = st.markdown('<span text-justify>#### **Your following risk profile has been established based on your risk capacity and risk tolerance:**</span>')
+        txt = st.markdown('<span class="text-justify">#### **Your following risk profile has been established based on your risk capacity and risk tolerance:**</span>')
         st.markdown('\n')
         st.write("**Risk Appetite:**", f"<span class='{risk_appetite_category.lower().replace(' ', '-')}'><b>{risk_appetite_category}</b></span>", unsafe_allow_html=True)
         st.markdown('\n')
