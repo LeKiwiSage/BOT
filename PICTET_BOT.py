@@ -18,8 +18,8 @@ st.markdown("""
     .text-justify {
         text-align: justify;
     }
-    .highlight-red {
-        background-color: lightred;
+    .highlight-light-red {
+        background-color: #ffcccc;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -111,7 +111,7 @@ def main():
     # Text with justified alignment
     st.markdown("""
     <p class="text-justify">
-    Um Ihre Investitionen zu optimieren, ist es von größter Bedeutung, Ihre Risikotoleranz und Ihre finanziellen Ziele <b>zu verstehen</b>. Indem wir Ihnen <mark class="highlight-red">maßgeschneiderte Fragen</mark> zu Ihren <i>Risikofähigkeiten</i> und <i>Anlagezielen</i> stellen, gewährleisten wir <span style="color:red">personalisierte Strategien</span>, die genau auf Ihre Bedürfnisse und Wünsche abgestimmt sind. Lassen Sie uns diese Reise gemeinsam antreten.
+    Um Ihre Investitionen zu optimieren, ist es von größter Bedeutung, Ihre Risikotoleranz und Ihre finanziellen Ziele <b>zu verstehen</b>. Indem wir Ihnen <mark class="highlight-light-red">maßgeschneiderte Fragen</mark> zu Ihren <i>Risikofähigkeiten</i> und <i>Anlagezielen</i> stellen, gewährleisten wir <span style="color:red">personalisierte Strategien</span>, die genau auf Ihre Bedürfnisse und Wünsche abgestimmt sind. Lassen Sie uns diese Reise gemeinsam antreten.
     </p>
     """, unsafe_allow_html=True)
 
