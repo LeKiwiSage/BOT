@@ -11,7 +11,6 @@ st.title('STOCK TRADING BOT')
 st.subheader('Primarily Invented for Creative Tax Evasion Tactics (P.I.C.T.E.T) Portfolio Optimizer')
 st.write('---')
 
-#Welcome Statement
 # Custom CSS style for text justification
 st.markdown("""
 <style>
@@ -28,11 +27,12 @@ st.markdown("""
         font-style: italic;
     }
     .red-text {
-        color: red;
+        color: #e32417;
     }
 </style>
 """, unsafe_allow_html=True)
 
+##Welcome Statement
 st.subheader('Dear client P.I.C.T.E.T')
 st.markdown('\n\n')
 txt = st.markdown("""
