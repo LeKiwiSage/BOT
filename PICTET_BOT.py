@@ -19,7 +19,8 @@ st.markdown("""
         text-align: justify;
     }
     .highlight-light-red {
-        background-color: #FFE9E9;
+        background-color: #FFE9E9
+        color: red; 
     }
     .bold {
         font-weight: bold;
@@ -33,9 +34,7 @@ st.markdown("""
 st.subheader('Dear client P.I.C.T.E.T')
 st.markdown('\n\n')
 txt = st.markdown("""
-        <p class="highlight-light-red bold text-justify">
-            Willkommen auf Ihrer Investitionsplattform!</span>
-        </p>
+        <p class="highlight-light-red bold text-justify">Willkommen auf Ihrer Investitionsplattform!</span></p>
 
         <p class="text-justify">
             Wir freuen uns sehr, dass Sie bei uns sind und wir gemeinsam auf eine spannende Reise gehen. Unser Ziel ist einfach, aber ehrgeizig: Wir möchten Sie in die Lage versetzen, Ihr Anlageportfolio über mehrere Vermögenswerte zu erweitern, die genau auf Ihr einzigartiges Risiko-Ertrags-Profil zugeschnitten sind.
