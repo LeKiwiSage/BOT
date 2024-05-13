@@ -95,21 +95,22 @@ def determine_risk_profile_category(risk_profile):
 
 def main():
     st.subheader("Risk-Reward Profile Assessment")
+    
     # Custom CSS style for text justification
-st.markdown("""
-<style>
-    .text-justify {
-        text-align: justify;
-    }
-</style>
-""", unsafe_allow_html=True)
+    st.markdown("""
+    <style>
+        .text-justify {
+            text-align: justify;
+        }
+    </style>
+    """, unsafe_allow_html=True)
 
-# Text with justified alignment
-st.markdown("""
-<p class="text-justify">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in sapien id sem fermentum tincidunt. Ut vitae nisl non mauris pulvinar vestibulum. Suspendisse potenti. Donec rutrum ex quis augue fermentum mollis. Proin commodo diam vitae diam dignissim, nec elementum nisi dapibus. Proin aliquam augue ac tortor cursus aliquam. Fusce id ligula vehicula, consequat mi non, luctus felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec id enim vitae risus ultrices bibendum nec at mi. Curabitur suscipit, metus nec ullamcorper efficitur, urna nisi luctus leo, sit amet convallis orci quam at mi. Mauris vehicula nec odio eu suscipit. Integer dapibus tortor nec sapien posuere consequat. Aliquam vel dui et tellus tincidunt tincidunt. Sed id elit volutpat, scelerisque lectus at, aliquam dolor. Curabitur a tortor nec orci dapibus sollicitudin vel eget est. Ut consectetur nibh et suscipit viverra. Vestibulum at malesuada risus.
-</p>
-""", unsafe_allow_html=True)
+    # Text with justified alignment
+    st.markdown("""
+    <p class="text-justify">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in sapien id sem fermentum tincidunt. Ut vitae nisl non mauris pulvinar vestibulum. Suspendisse potenti. Donec rutrum ex quis augue fermentum mollis. Proin commodo diam vitae diam dignissim, nec elementum nisi dapibus. Proin aliquam augue ac tortor cursus aliquam. Fusce id ligula vehicula, consequat mi non, luctus felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec id enim vitae risus ultrices bibendum nec at mi. Curabitur suscipit, metus nec ullamcorper efficitur, urna nisi luctus leo, sit amet convallis orci quam at mi. Mauris vehicula nec odio eu suscipit. Integer dapibus tortor nec sapien posuere consequat. Aliquam vel dui et tellus tincidunt tincidunt. Sed id elit volutpat, scelerisque lectus at, aliquam dolor. Curabitur a tortor nec orci dapibus sollicitudin vel eget est. Ut consectetur nibh et suscipit viverra. Vestibulum at malesuada risus.
+    </p>
+    """, unsafe_allow_html=True)
 
     txt = st.markdown("""Um Ihre Investitionen zu optimieren, ist es von größter Bedeutung, Ihre Risikotoleranz und Ihre finanziellen Ziele zu verstehen. Indem wir Ihnen maßgeschneiderte Fragen zu Ihren Risikofähigkeiten und Anlagezielen stellen, gewährleisten wir personalisierte Strategien, die genau auf Ihre Bedürfnisse und Wünsche abgestimmt sind. Lassen Sie uns diese Reise gemeinsam antreten.""")
     st.markdown('\n')
