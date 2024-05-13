@@ -187,7 +187,10 @@ def main():
     st.markdown('\n')
     st.write('---')
 
-    
+if __name__ == "__main__":
+    main()
+
+     
     st.subheader("**P.I.C.T.E.T. Personalisierte Kauf-/Verkaufsvorschläge**")
     txt = st.markdown("""
         <p class="text-justify">
@@ -261,8 +264,5 @@ if stock_symbol:
     ax.legend()
     st.pyplot(fig)
     
-if __name__ == "__main__":
-    main()
-
 if __name__ == "__main__":
     second_main()
