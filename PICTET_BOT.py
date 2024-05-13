@@ -221,7 +221,7 @@ def second_main():
 
     if st.button("Search"):
         if company_name:
-            results = search_stock_ticker(company_name)
+            results = search_stock_name(company_name)
             if results:
                 st.write("Search Results:")
                 for result in results:
@@ -232,7 +232,7 @@ def second_main():
             st.write("Please enter the name of the company.")
 
 def third_main():    
-    if stock_symbol:
+    stock_symbol:
         # Abrufen des aktuellen Kurses
         url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock_symbol}&apikey=DEINSCHLÜSSEL'
         response = requests.get(url)
