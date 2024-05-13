@@ -19,7 +19,7 @@ st.markdown("""
         text-align: justify;
     }
     .highlight-light-red {
-        background-color: #ffcccc;
+        background-color: #FFE9E9;
     }
 </style>
 """, unsafe_allow_html=True)
