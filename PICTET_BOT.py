@@ -10,6 +10,9 @@ import datetime as datetime
 st.title('STOCK TRADING BOT')
 st.subheader('Primarily Invented for Creative Tax Evasion Tactics (P.I.C.T.E.T) Portfolio Optimizer')
 
+with st.beta_container():
+    st.write("This is content for section 1")
+
 #Welcome Statement
 txt = st.markdown(
     """
