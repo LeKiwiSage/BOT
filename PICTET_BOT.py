@@ -211,36 +211,34 @@ def second_main():
     
     if st.button("Search"):
         if stock_symbol:
-            # Fetching current price
-            url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock_symbol}&apikey=YOUR_API_KEY'
+            # Abrufen des aktuellen Kurses
+            url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock_symbol}&apikey=DEINSCHLÜSSEL'
             response = requests.get(url)
             data = response.json()
-            current_price = data.get('Global Quote', {}).get('05. price', 'Not available')
-            st.write(f"Current price of {stock_symbol}: ${current_price}")
-
-            # Loading historical data
+            current_price = data.get('Global Quote', {}).get('05. price', 'Nicht verfügbar')
+            st.write(f"Aktueller Kurs von {stock_symbol}: ${current_price}")
+        
+            # Historische Daten laden
             end_date = pd.Timestamp.today()
             start_date = end_date - pd.DateOffset(months=3)
             stock_data = yf.download(stock_symbol, start=start_date, end=end_date)
             stock_data['SMA'] = stock_data['Close'].rolling(window=20).mean()
             average_close = stock_data['Close'].mean()
             latest_sma = stock_data['SMA'].iloc[-1]
-
-            # Recommendation based on risk profile
-            recommendation = 'Buy' if latest_sma > average_close else 'Sell'
-            st.write(f"Recommendation based on your risk profile: {recommendation}")
-            st.write(f"Average closing price of the last 3 months: ${average_close:.2f}")
-            st.write(f"Current Simple Moving Average (SMA): ${latest_sma:.2f}")
-
-            # Plotting stock data
+        
+            # Empfehlung basierend auf Risikoprofil
+            recommendation = 'Kaufen' if latest_sma > average_close else 'Verkaufen'
+            st.write(f"Empfehlung basierend auf Ihrem Risikoprofil: {recommendation}")
+            st.write(f"Durchschnittlicher Schlusskurs der letzten 3 Monate: ${average_close:.2f}")
+            st.write(f"Aktueller gleitender Durchschnitt (SMA): ${latest_sma:.2f}")
+        
+            # Darstellung der Aktiendaten
             fig, ax = plt.subplots(figsize=(10, 5))
-            ax.plot(stock_data['Close'], label='Closing Price')
-            ax.plot(stock_data['SMA'], label='SMA (20 Days)')
-            ax.set_title(f'Price Development of {stock_symbol}')
+            ax.plot(stock_data['Close'], label='Schlusskurs')
+            ax.plot(stock_data['SMA'], label='SMA (20 Tage)')
+            ax.set_title(f'Kursentwicklung von {stock_symbol}')
             ax.legend()
             st.pyplot(fig)
-        else:
-            st.write("Please enter the stock symbol.")
 
 if __name__ == "__main__":
     second_main()
