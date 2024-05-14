@@ -131,7 +131,7 @@ def determine_risk_profile_category(risk_profile):
     else:
         return "Aggressiv"
 
-def calculate_risk_reward_profile():
+def main():
     st.subheader("Risiko-Reward Profilbewertung")
     
     # Text with justified alignment
