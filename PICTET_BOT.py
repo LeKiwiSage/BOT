@@ -30,11 +30,11 @@ st.markdown("""
         font-size: 24px; 
         font-weight: bold;
     }
-    .conservative { color: green; }
-    .moderately-conservative { color: blue; }
-    .moderate { color: orange; }
-    .moderately-aggressive { color: purple; }
-    .aggressive { color: red; }
+    .konservativ { color: green; }
+    .moderat-konservativ { color: blue; }
+    .moderat { color: orange; }
+    .moderat-aggressiv { color: purple; }
+    .aggressiv { color: red; }
 </style>
 """, unsafe_allow_html=True)
 
