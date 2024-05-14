@@ -196,7 +196,7 @@ if __name__ == "__main__":
     st.subheader("**P.I.C.T.E.T. Personalisierte Kauf-/Verkaufsvorschläge**")
     txt = st.markdown("""
         <p class="text-justify">
-        Nach der Bewertung Ihres Risikoprofils (der vorhin eingefärbte Begriff) kann unsere Anlageplattform P.I.C.T.E.T. nun für Sie ermitteln, ob Sie eine Aktie aus Ihrem Portfolio kaufen oder verkaufen sollten. Dazu müssen Sie den Ticker (Symbol) der Aktie von der NYSE oder NASDAQ kennen. Bitte schauen Sie unter dieser URL nach, wenn Sie es nicht wissen
+        Nach der Bewertung Ihres Risikoprofils (der vorhin eingefärbte Begriff) kann unsere Anlageplattform P.I.C.T.E.T. nun für Sie ermitteln, ob Sie eine Aktie aus Ihrem Portfolio kaufen oder verkaufen sollten. Dazu müssen Sie den Ticker (Symbol) der Aktie von der NYSE oder NASDAQ kennen. Bitte schauen Sie unter dieser URL nach, wenn Sie es nicht wissen (https://www.nyse.com/listings_directory/stock) und (https://www.nasdaq.com/market-activity/stocks/screener).
         </p>
         <p class="text-justify">
         Lassen Sie uns nun damit beginnen, eine bestimmte Aktie auszuwählen, über die Sie sich erkundigen möchten:
