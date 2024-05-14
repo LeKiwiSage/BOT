@@ -201,9 +201,8 @@ def calculate_risk_reward_profile():
     """, unsafe_allow_html=True)
     
 # Aktienauswahl und -analyse mit Alpha Vantage API
-stock_symbol = None
+
 def second_main():
-    global stock_symbol
     st.subheader("Stock Ticker Search")
     
     stock_symbol = st.text_input('**Geben Sie das Aktiensymbol ein (z.B. AAPL für Apple):**')
