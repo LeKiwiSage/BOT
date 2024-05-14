@@ -177,7 +177,7 @@ def main():
         risk_profile_category = determine_risk_profile_category(risk_profile)
 
         txt = st.markdown("""
-        #### **Your following risk profile has been established based on your risk capacity and risk tolerance:**
+        #### **Ihr folgendes Risikoprofil wurde auf der Grundlage Ihrer Risikofähigkeit und Risikotoleranz erstellt:**
         """)
         st.markdown('\n')
         st.write("Ihr Risiko Appetit:", f"<span class='{risk_appetite_category.lower().replace(' ', '-')}'><b>{risk_appetite_category}</b></span>", unsafe_allow_html=True)
