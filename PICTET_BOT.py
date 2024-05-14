@@ -80,9 +80,9 @@ st.write('---')
 
 def calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, loss, min_loss):
     # Convert select box responses to numerical values
-    time_map = {"Less than 3 years": 1, "3 to 10 years": 2, "More than 10 years": 3}
-    income_map = {"Less than 100000 CHF": 1, "Between 100000 and 250000 CHF": 2, "More than 250000 CHF": 3}
-    slider_map = {"Fully disagree": 1, "Rather disagree": 2, "Rather agree": 3, "Fully agree": 4}
+    time_map = {"Weniger als 3 Jahre": 1, "3 bis 10 Jahre": 2, "Mehr als 10 Jahre": 3}
+    income_map = {"Weniger als 100.000 CHF": 1, "Zwischen 100.000 und 250.000 CHF": 2, "Mehr als 250.000 CHF": 3}
+    slider_map = {"Vollständig dagegen": 1, "Eher dagegen": 2, "Eher dafür": 3, "Vollständig dafür": 4}
 
     time_value = time_map.get(time)
     income_value = income_map.get(income)
