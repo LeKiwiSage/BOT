@@ -202,9 +202,11 @@ if __name__ == "__main__":
         Lassen Sie uns nun damit beginnen, eine bestimmte Aktie auszuwählen, über die Sie sich erkundigen möchten:
         </p>
     """, unsafe_allow_html=True)
-
+    
 # Aktienauswahl und -analyse mit Alpha Vantage API
+stock_symbol = None
 def second_main():
+    global stock_symbol
     st.subheader("Stock Ticker Search")
     
     stock_symbol = st.text_input('**Geben Sie das Aktiensymbol ein (z.B. AAPL für Apple):**')
