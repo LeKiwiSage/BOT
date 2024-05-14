@@ -242,6 +242,6 @@ def second_main():
         st.pyplot(fig)
 
 if __name__ == "__main__":
-    if stock_symbol:
-        st.subheader("**P.I.C.T.E.T. Personalisierte Kauf-/Verkaufsvorschläge**")
-        second_main()
+    main()
+    st.subheader("**P.I.C.T.E.T. Personalisierte Kauf-/Verkaufsvorschläge**")
+    second_main()
