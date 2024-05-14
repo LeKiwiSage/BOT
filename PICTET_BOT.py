@@ -189,9 +189,6 @@ def calculate_risk_reward_profile():
     st.markdown('\n')
     st.write('---')
 
-if __name__ == "__main__":
-    main()
-
      
     st.subheader("**P.I.C.T.E.T. Personalisierte Kauf-/Verkaufsvorschläge**")
     txt = st.markdown("""
