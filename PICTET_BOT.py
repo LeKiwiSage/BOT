@@ -105,34 +105,34 @@ def calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, lo
 
 def determine_risk_appetite_category(risk_appetite):
     if risk_appetite < 2.5:
-        return "Decreased"
+        return "Verringert"
     elif risk_appetite < 3.5:
-        return "Medium"
+        return "Mittel"
     else:
-        return "Increased"
+        return "Erhöht"
 
 def determine_risk_capacity_category(risk_capacity):
-    if risk_capacity == 1:
-        return "Low"
-    elif risk_capacity == 2:
-        return "Medium"
+    if risk_capacity <= 1.5:
+        return "Tief"
+    elif risk_capacity <= 2.5:
+        return "Mittel"
     else:
-        return "High"
+        return "Hoch"
 
 def determine_risk_profile_category(risk_profile):
     if risk_profile < 2:
-        return "Conservative"
+        return "Konservativ"
     elif risk_profile < 3:
-        return "Moderately Conservative"
+        return "Moderat Konservativ"
     elif risk_profile < 4:
-        return "Moderate"
+        return "Moderat"
     elif risk_profile < 5:
-        return "Moderately Aggressive"
+        return "Moderat Aggressiv"
     else:
-        return "Aggressive"
+        return "Aggressiv"
 
 def main():
-    st.subheader("Risk-Reward Profile Assessment")
+    st.subheader("Risiko-Reward Profilbewertung")
     
     # Text with justified alignment
     st.markdown("""
@@ -150,20 +150,21 @@ def main():
     st.markdown('\n')
   
     # Questionnaire
+    options = ["Vollständig dagegen", "Eher dagegen", "Eher dafür", "Vollständig dafür"]
     st.markdown('<p class="questionnaire-header">Questionnaire</p>', unsafe_allow_html=True)
-    time = st.selectbox("**How long do you plan to invest your money?**", ("Less than 3 years", "3 to 10 years", "More than 10 years"))
+    time = st.selectbox("**Wie lange planen Sie zu investieren?**", ("Weniger als 3 Jahre", "3 bis 10 Jahre", "Mehr als 10 Jahre"))
     st.markdown('\n')
-    income = st.selectbox("**How much money do you plan to invest into the fund?**", ("Less than 100000 CHF", "Between 100000 and 250000 CHF", "More than 250000 CHF"))
+    income = st.selectbox("**Wie viel möchten Sie investieren?**", options=options)
     st.markdown('\n')
-    finpriority = st.select_slider("**I take financial matters seriously and security is my top priority.**", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"])
+    finpriority = st.select_slider("**Ich nehme finanzielle Angelegenheiten ernst, und Sicherheit hat für mich oberste Priorität.**", options=options)
     st.markdown('\n')
-    risk = st.select_slider("**When it comes to my money, I am reluctant to take risks.**", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"])
+    risk = st.select_slider("**Wenn es um mein Geld geht, zögere ich, Risiken einzugehen.**", options=options)
     st.markdown('\n')
-    high_risk = st.select_slider("**I would like to achieve higher profits and therefore would be willing to take on higher risks.**", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"])
+    high_risk = st.select_slider("**Ich möchte höhere Gewinne erzielen und wäre daher bereit, höhere Risiken einzugehen.**", options=options)
     st.markdown('\n')
-    loss = st.select_slider("**The risk of suffering losses on my assets concerns me.**", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"])
+    loss = st.select_slider("**Das Risiko, mit meinem Vermögen Verluste zu erleiden, macht mir Sorgen.**", options=options)
     st.markdown('\n')
-    min_loss = st.select_slider("**Minimal losses also concern me.**", options=["Fully disagree", "Rather disagree", "Rather agree", "Fully agree"])
+    min_loss = st.select_slider("**Auch minimale Verluste machen mir Sorgen.**", options=options)
 
     st.markdown('\n')
 
@@ -178,11 +179,11 @@ def main():
         #### **Your following risk profile has been established based on your risk capacity and risk tolerance:**
         """)
         st.markdown('\n')
-        st.write("Risk Appetite:", f"<span class='{risk_appetite_category.lower().replace(' ', '-')}'><b>{risk_appetite_category}</b></span>", unsafe_allow_html=True)
+        st.write("Ihr Risiko Appetit:", f"<span class='{risk_appetite_category.lower().replace(' ', '-')}'><b>{risk_appetite_category}</b></span>", unsafe_allow_html=True)
         st.markdown('\n')
-        st.write("Risk Capacity:", f"<span class='{risk_capacity_category.lower().replace(' ', '-')}'><b>{risk_capacity_category}</b></span>", unsafe_allow_html=True)
+        st.write("Ihr Kapazitätsprofil:", f"<span class='{risk_capacity_category.lower().replace(' ', '-')}'><b>{risk_capacity_category}</b></span>", unsafe_allow_html=True)
         st.markdown('\n')
-        st.write("Risk Profile:", f"<span class='{risk_profile_category.lower().replace(' ', '-')}'><b>{risk_profile_category}</b></span>", unsafe_allow_html=True)
+        st.write("Ihr Risikoprofil:", f"<span class='{risk_profile_category.lower().replace(' ', '-')}'><b>{risk_profile_category}</b></span>", unsafe_allow_html=True)
     
     st.markdown('\n')
     st.write('---')
@@ -201,72 +202,44 @@ if __name__ == "__main__":
         </p>
     """, unsafe_allow_html=True)
 
-# # Aktienauswahl und -analyse mit Alpha Vantage API
-def search_stock_name(company_name):
-    try:
-        url = f"https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords={company_name}&apikey=DEINSCHLÜSSEL"
-        response = requests.get(url)
-        data = response.json()
-        if "bestMatches" in data:
-            return data["bestMatches"]
-        else:
-            return None
-    except Exception as e:
-        return None
-
+# Aktienauswahl und -analyse mit Alpha Vantage API
 def second_main():
     st.subheader("Stock Ticker Search")
-
-    # Input box for company name
-    company_name = st.text_input("**Enter the name of the company:**")
-
-    if st.button("Search"):
-        if company_name:
-            results = search_stock_name(company_name)
-            if results:
-                st.write("Search Results:")
-                for result in results:
-                    st.write(f"- {result['2. name']} ({result['1. symbol']})")
-            else:
-                st.write("No results found. Please try again.")
-        else:
-            st.write("Please enter the name of the company.")
-
-    st.markdown('\n')
     
-    # Check if stock_symbol is available
     stock_symbol = st.text_input('**Geben Sie das Aktiensymbol ein (z.B. AAPL für Apple):**')
     
-    
-    if stock_symbol:   
-        # Abrufen des aktuellen Kurses
-        url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock_symbol}&apikey=DEINSCHLÜSSEL'
-        response = requests.get(url)
-        data = response.json()
-        current_price = data.get('Global Quote', {}).get('05. price', 'Nicht verfügbar')
-        st.write(f"Aktueller Kurs von {stock_symbol}: ${current_price}")
-        
-        # Historische Daten laden
-        end_date = pd.Timestamp.today()
-        start_date = end_date - pd.DateOffset(months=3)
-        stock_data = yf.download(stock_symbol, start=start_date, end=end_date)
-        stock_data['SMA'] = stock_data['Close'].rolling(window=20).mean()
-        average_close = stock_data['Close'].mean()
-        latest_sma = stock_data['SMA'].iloc[-1]
-        
-        # Empfehlung basierend auf Risikoprofil
-        recommendation = 'Kaufen' if latest_sma > average_close else 'Verkaufen'
-        st.write(f"Empfehlung basierend auf Ihrem Risikoprofil: {recommendation}")
-        st.write(f"Durchschnittlicher Schlusskurs der letzten 3 Monate: ${average_close:.2f}")
-        st.write(f"Aktueller gleitender Durchschnitt (SMA): ${latest_sma:.2f}")
-        
-        # Darstellung der Aktiendaten
-        fig, ax = plt.subplots(figsize=(10, 5))
-        ax.plot(stock_data['Close'], label='Schlusskurs')
-        ax.plot(stock_data['SMA'], label='SMA (20 Tage)')
-        ax.set_title(f'Kursentwicklung von {stock_symbol}')
-        ax.legend()
-        st.pyplot(fig)
+    if st.button("Search"):
+        if stock_symbol:
+            # Fetching current price
+            url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock_symbol}&apikey=YOUR_API_KEY'
+            response = requests.get(url)
+            data = response.json()
+            current_price = data.get('Global Quote', {}).get('05. price', 'Not available')
+            st.write(f"Current price of {stock_symbol}: ${current_price}")
+
+            # Loading historical data
+            end_date = pd.Timestamp.today()
+            start_date = end_date - pd.DateOffset(months=3)
+            stock_data = yf.download(stock_symbol, start=start_date, end=end_date)
+            stock_data['SMA'] = stock_data['Close'].rolling(window=20).mean()
+            average_close = stock_data['Close'].mean()
+            latest_sma = stock_data['SMA'].iloc[-1]
+
+            # Recommendation based on risk profile
+            recommendation = 'Buy' if latest_sma > average_close else 'Sell'
+            st.write(f"Recommendation based on your risk profile: {recommendation}")
+            st.write(f"Average closing price of the last 3 months: ${average_close:.2f}")
+            st.write(f"Current Simple Moving Average (SMA): ${latest_sma:.2f}")
+
+            # Plotting stock data
+            fig, ax = plt.subplots(figsize=(10, 5))
+            ax.plot(stock_data['Close'], label='Closing Price')
+            ax.plot(stock_data['SMA'], label='SMA (20 Days)')
+            ax.set_title(f'Price Development of {stock_symbol}')
+            ax.legend()
+            st.pyplot(fig)
+        else:
+            st.write("Please enter the stock symbol.")
 
 if __name__ == "__main__":
     second_main()
