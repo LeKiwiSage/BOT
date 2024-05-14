@@ -209,36 +209,35 @@ def second_main():
     
     stock_symbol = st.text_input('**Geben Sie das Aktiensymbol ein (z.B. AAPL für Apple):**')
     
-    if st.button("Search"):
-        if stock_symbol:
-            # Abrufen des aktuellen Kurses
-            url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock_symbol}&apikey=DEINSCHLÜSSEL'
-            response = requests.get(url)
-            data = response.json()
-            current_price = data.get('Global Quote', {}).get('05. price', 'Nicht verfügbar')
-            st.write(f"Aktueller Kurs von {stock_symbol}: ${current_price}")
+    if stock_symbol:
+        # Abrufen des aktuellen Kurses
+        url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock_symbol}&apikey=DEINSCHLÜSSEL'
+        response = requests.get(url)
+        data = response.json()
+        current_price = data.get('Global Quote', {}).get('05. price', 'Nicht verfügbar')
+        st.write(f"Aktueller Kurs von {stock_symbol}: ${current_price}")
         
-            # Historische Daten laden
-            end_date = pd.Timestamp.today()
-            start_date = end_date - pd.DateOffset(months=3)
-            stock_data = yf.download(stock_symbol, start=start_date, end=end_date)
-            stock_data['SMA'] = stock_data['Close'].rolling(window=20).mean()
-            average_close = stock_data['Close'].mean()
-            latest_sma = stock_data['SMA'].iloc[-1]
+        # Historische Daten laden
+        end_date = pd.Timestamp.today()
+        start_date = end_date - pd.DateOffset(months=3)
+        stock_data = yf.download(stock_symbol, start=start_date, end=end_date)
+        stock_data['SMA'] = stock_data['Close'].rolling(window=20).mean()
+        average_close = stock_data['Close'].mean()
+        latest_sma = stock_data['SMA'].iloc[-1]
         
-            # Empfehlung basierend auf Risikoprofil
-            recommendation = 'Kaufen' if latest_sma > average_close else 'Verkaufen'
-            st.write(f"Empfehlung basierend auf Ihrem Risikoprofil: {recommendation}")
-            st.write(f"Durchschnittlicher Schlusskurs der letzten 3 Monate: ${average_close:.2f}")
-            st.write(f"Aktueller gleitender Durchschnitt (SMA): ${latest_sma:.2f}")
+        # Empfehlung basierend auf Risikoprofil
+        recommendation = 'Kaufen' if latest_sma > average_close else 'Verkaufen'
+        st.write(f"Empfehlung basierend auf Ihrem Risikoprofil: {recommendation}")
+        st.write(f"Durchschnittlicher Schlusskurs der letzten 3 Monate: ${average_close:.2f}")
+        st.write(f"Aktueller gleitender Durchschnitt (SMA): ${latest_sma:.2f}")
         
-            # Darstellung der Aktiendaten
-            fig, ax = plt.subplots(figsize=(10, 5))
-            ax.plot(stock_data['Close'], label='Schlusskurs')
-            ax.plot(stock_data['SMA'], label='SMA (20 Tage)')
-            ax.set_title(f'Kursentwicklung von {stock_symbol}')
-            ax.legend()
-            st.pyplot(fig)
+        # Darstellung der Aktiendaten
+        fig, ax = plt.subplots(figsize=(10, 5))
+        ax.plot(stock_data['Close'], label='Schlusskurs')
+        ax.plot(stock_data['SMA'], label='SMA (20 Tage)')
+        ax.set_title(f'Kursentwicklung von {stock_symbol}')
+        ax.legend()
+        st.pyplot(fig)
 
 if __name__ == "__main__":
     second_main()
