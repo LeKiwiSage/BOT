@@ -169,7 +169,7 @@ def main():
 
     st.markdown('\n')
 
-    if st.button("Calculate Risk-Reward Profile"):
+    if st.button("Risiko-Reward-Profil berechnen"):
         risk_appetite, risk_capacity, risk_profile = calculate_risk_reward_profile(time, income, finpriority, risk, high_risk, loss, min_loss)
         
         risk_appetite_category = determine_risk_appetite_category(risk_appetite)
