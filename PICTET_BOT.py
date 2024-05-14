@@ -150,11 +150,12 @@ def main():
     st.markdown('\n')
   
     # Questionnaire
-    options = ["Vollständig dagegen", "Eher dagegen", "Eher dafür", "Vollständig dafür"]
     st.markdown('<p class="questionnaire-header">Questionnaire</p>', unsafe_allow_html=True)
+
+    options = ["Vollständig dagegen", "Eher dagegen", "Eher dafür", "Vollständig dafür"]
     time = st.selectbox("**Wie lange planen Sie zu investieren?**", ("Weniger als 3 Jahre", "3 bis 10 Jahre", "Mehr als 10 Jahre"))
     st.markdown('\n')
-    income = st.selectbox("**Wie viel möchten Sie investieren?**", options=options)
+    income = st.selectbox("**Wie viel möchten Sie investieren?**", ("Weniger als 100.000 CHF, "Zwischen 100.000 und 250.000 CHF", "Mehr als 250.000 CHF"))
     st.markdown('\n')
     finpriority = st.select_slider("**Ich nehme finanzielle Angelegenheiten ernst, und Sicherheit hat für mich oberste Priorität.**", options=options)
     st.markdown('\n')
