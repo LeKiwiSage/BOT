@@ -239,5 +239,6 @@ def second_main():
 
 if __name__ == "__main__":
     main()
-    st.subheader("**P.I.C.T.E.T. Personalisierte Kauf-/Verkaufsvorschläge**")
+    
+if __name__ == "__main__":
     second_main()
