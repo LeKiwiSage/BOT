@@ -240,4 +240,7 @@ def second_main():
         st.pyplot(fig)
 
 if __name__ == "__main__":
-    second_main()
+    if st.button("Risiko-Reward-Profil berechnen"):
+        main()
+        st.subheader("**P.I.C.T.E.T. Personalisierte Kauf-/Verkaufsvorschläge**")
+        second_main()
