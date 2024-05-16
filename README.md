@@ -48,7 +48,7 @@ Dieses Projekt nutzt die folgenden APIs:
 Beiträge sind willkommen! Wenn Sie Vorschläge oder Verbesserungen haben, senden Sie gerne eine Pull-Request.
 
 ## Lizenz
-Dieses Projekt steht unter der MIT Lizenz.
+Dieses Projekt steht unter der Apache 2.0 Lizenz.
 
 ## Danksagungen
 Besonderer Dank gilt den Entwicklern und Betreuern der in diesem Projekt verwendeten APIs:
