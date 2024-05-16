@@ -1,8 +1,6 @@
 ## 💸: Stock Trading Bot P.I.C.T.E.T
 
-Der P.I.C.T.E.T. (Primarily Invented for Creative Tax Evasion Tactics) Portfolio Optimizer ist eine Investitionsplattform, die Nutzern hilft, ihre Anlageportfolios zu optimieren. 
-Die Anwendung ermöglicht es Nutzern, ihre Portfolios über mehrere Vermögenswerte zu erweitern, die auf ihr einzigartiges Risiko-Rendite-Profil zugeschnitten sind. 
-Durch das Verständnis der Risikotoleranz, Anlageziele und Präferenzen des Nutzers bietet die Plattform personalisierte Anlagestrategien und Kauf-/Verkaufsempfehlungen basierend auf technischer Analyse.
+Der P.I.C.T.E.T. (Primarily Invented for Creative Tax Evasion Tactics) Portfolio Optimizer ist eine Investitionsplattform, die Nutzern hilft, ihre Anlageportfolios zu optimieren. Die Anwendung ermöglicht es Nutzern, ihre Portfolios über mehrere Vermögenswerte zu erweitern, die auf ihr einzigartiges Risiko-Rendite-Profil zugeschnitten sind. Durch das Verständnis der Risikotoleranz, Anlageziele und Präferenzen des Nutzers bietet die Plattform personalisierte Anlagestrategien und Kauf-/Verkaufsempfehlungen basierend auf technischer Analyse.
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://pictet-stock-bot.streamlit.app/)
 
